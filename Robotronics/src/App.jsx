@@ -37,7 +37,7 @@ function App() {
         <Routes>
           <Route path="/Search" element={<Search />} />
           <Route path="/Screen" element={<Screen />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/aboutUs" element={<AboutUs />} />
           <Route path="/Cart" element={<Cart />} />
           <Route path="/shop" element={<Shop />} />

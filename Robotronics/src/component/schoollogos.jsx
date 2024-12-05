@@ -7,40 +7,51 @@ import s4 from "../assets/logo/BHS.svg";
 import s5 from "../assets/logo/BHS (1).svg";
 import Aos from "aos";
 
-const items = [s1, s2, s3, s4, s5, s1, s2]; // Array of logos
+const items = [s1, s2, s3, s4, s5, s1, s2, s3, s4, s5]; // Array of logos
 
 const SchoolLogos = () => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollSpeed = 2000; // Speed for the interval in ms
 
   useEffect(() => {
-    Aos.init(); // Initialize AOS library
+    // Initialize AOS if available
+    if (Aos?.init) Aos.init();
 
-    const interval = setInterval(() => {
-      // Increment scrollPosition to animate logos
-      setScrollPosition((prev) => (prev === 100 ? 0 : prev + 14.28));
-    }, 2000);
+    let interval;
+    if (!isPaused) {
+      interval = setInterval(() => {
+        setScrollPosition((prev) => (prev + 14.28) % 100); // Wrap around at 100%
+      }, scrollSpeed);
+    }
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearInterval(interval); // Cleanup interval on unmount or pause
+  }, [isPaused]); // Re-run effect when isPaused changes
 
   return (
-    <div className="bg-lightgray p-5 z-10 overflow-hidden" >
-      <div className="flex items-center overflow-hidden">
-        <motion.div
-          className="flex gap-4 justify-center" // Center logos horizontally
-          style={{ transform: `translateX(-${scrollPosition}%)` }}
-          animate={{ x: `-${scrollPosition}%` }}
-          transition={{ duration: 2, loop: Infinity, ease: "linear" }}
-        >
-          {items.map((item, index) => (
-            <motion.img
-              key={index}
-              className="max-w-xs md:max-w-sm lg:max-w-md" // Limit logo width for responsiveness
-              src={item}
-              alt={`img${index}`}
-            />
-          ))}
-        </motion.div>
+    <div className="bg-lightgray p-5 z-10 overflow-hidden">
+      <div
+        className="flex items-center overflow-hidden"
+        onMouseEnter={() => setIsPaused(true)} // Pause on hover
+        onMouseLeave={() => setIsPaused(false)} // Resume on mouse leave
+      >
+        <div className="flex items-center overflow-hidden">
+          <motion.div
+            className="flex gap-4 justify-center" // Center logos horizontally
+            style={{ transform: `translateX(-${scrollPosition}%)` }}
+            animate={{ x: `-${scrollPosition}%` }}
+            transition={{ duration: 2, loop: Infinity, ease: "linear" }}
+          >
+            {items.map((item, index) => (
+              <motion.img
+                key={index}
+                className="max-w-xs md:max-w-sm lg:max-w-md" // Limit logo width for responsiveness
+                src={item}
+                alt={`img${index}`}
+              />
+            ))}
+          </motion.div>
+        </div>
       </div>
     </div>
   );

@@ -24,15 +24,17 @@ const Intro = () => {
     "Grade 1-8 Robotronics Curriculum.",
     "Robotic Competitions (Management, Preparation and Consultation)",
   ];
-  
+
   return (
     <div className="internationalServices">
+      {" "}
+      //image in index.css
       <div className="p-5 ">
         <Header />
       </div>
       <div className="space-y-5">
-          {/* As a School & Parent */}
-          <div className="w-full flex justify-center">
+        {/* As a School & Parent */}
+        <div className="w-full flex justify-center">
           <div className=" relative inline-block text-left">
             <button
               type="button"
@@ -66,12 +68,20 @@ const Intro = () => {
             {/* Text */}
             <div className="space-y-2">
               <div className="flex flex-row space-x-2">
-                <h1 className="lg:text-3xl poppins-extralight text-white">WELCOME TO THE </h1>
-                <h1 className="lg:text-3xl poppins-bold text-white font-bold">WORLD OF</h1>
+                <h1 className="lg:text-3xl poppins-extralight text-white">
+                  WELCOME TO THE{" "}
+                </h1>
+                <h1 className="lg:text-3xl poppins-bold text-white font-bold">
+                  WORLD OF
+                </h1>
               </div>
               <div className="flex">
-                <p className="lg:text-8xl text-4xl poppins-bold text-yellow">RO</p>
-                <p className="lg:text-8xl text-4xl poppins-bold text-white">BOTRONICS</p>
+                <p className="lg:text-8xl text-4xl poppins-bold text-yellow">
+                  RO
+                </p>
+                <p className="lg:text-8xl text-4xl poppins-bold text-white">
+                  BOTRONICS
+                </p>
               </div>
               <p className="text-wrap text-sm poppins-extralight text-white">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -80,23 +90,6 @@ const Intro = () => {
                 possimus molestiae pariatur amet officiis.
               </p>
             </div>
-            {/* button
-            <div className="space-x-3">
-              <button
-                to="section2"
-                offset={-70}
-                className="items-center justify-center p-3 px-4 lg:text-lg text-sm text-black poppins-bold bg-gold hover:bg-lin shadow-xl rounded-md"
-              >
-                Get Enrolled
-              </button>
-              <button
-                to="section1"
-                offset={-70}
-                className="  items-center justify-center p-3 px-4 lg:text-lg text-sm text-black poppins-bold bg-lin hover:bg-gold shadow-xl rounded-md"
-              >
-                Get Started
-              </button>
-            </div> */}
             {/* socil icons */}
             <div className="flex flex-row space-x-5">
               <a
@@ -140,7 +133,7 @@ const Intro = () => {
                 <FaLinkedin className="text-brown" />
               </a>
               <a
-                href="https://api.whatsapp.com/send?phone=1234567890"
+                // href="https://api.whatsapp.com/send?phone=1234567890"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="lg:p-3 p-1 border  border-brown bg-white rounded-xl hover:bg-white hover:text-brown"
