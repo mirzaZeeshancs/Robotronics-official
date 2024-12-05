@@ -107,9 +107,9 @@ const Graph = () => {
                      
                 </div>
                 {/* graph */}
-                {/* <div className='w-1/3'>
+                <div className='w-2/3'>
                     <CanvasJSChart options={options} />
-                </div> */}
+                </div>
             </div>
         </div>
     );
