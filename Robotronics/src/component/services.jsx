@@ -44,7 +44,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="services" id="services">
+    <div className="services" id="services"data-aos="fade-down" data-aos-duration="2000" data-aos-delay="4000">
       <div className=" flex justify-between items-start"data-aos="fade-down" data-aos-duration="2000" data-aos-delay="4000">
         {/* Left div for text */}
         <div className="flex justify-start lg:p-10 p-2" >

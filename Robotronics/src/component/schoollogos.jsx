@@ -18,7 +18,7 @@ const SchoolLogos = () => {
 
     const interval = setInterval(() => {
       // Increment scrollPosition to animate logos
-      setScrollPosition((prev) => (prev >= 100 ? 0 : prev + 50.28));
+      setScrollPosition((prev) => (prev >= 100 ? 0 : prev + 7.28));
     }, 2000);
 
     return () => clearInterval(interval);
